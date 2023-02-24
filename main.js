@@ -123,3 +123,54 @@ class User2 {
     return `${this.firstName} ${this.lastName}`;
   }
 }
+
+// 배열 .map()
+const numbers = [1, 2, 3, 4];
+const fruits = ["Apple", "Banna", "Cherry"];
+
+const d = fruits.forEach((fruit, index) => {
+  console.log(`${fruit}-${index}`);
+});
+console.log(d);
+
+const e = fruits.map((fruit, index) => ({
+  id: index,
+  name: fruit,
+}));
+console.log(e);
+
+// 배열 .filter()
+const f = numbers.map((number) => {
+  return number < 3;
+});
+console.log(f);
+
+const g = numbers.filter((number) => {
+  return number < 3;
+});
+console.log(g);
+
+// 배열 .find() .findIndex()
+const h = fruits.find((fruit) => {
+  return /^B/.test(fruit);
+});
+// const h = fruits.find(fruit => /^B/.text(fruit))
+console.log(h);
+
+const i = fruits.findIndex((fruit) => {
+  return /^B/.test(fruit);
+});
+// const i = fruits.findIndex(fruit => /^B/.text(fruit))
+console.log(h);
+
+// 배열 .includes()
+const j = numbers.includes(3);
+console.log(j);
+
+// 배열 .unshift()
+numbers.unshift(0); // 배열 맨 앞에 삽입
+console.log(numbers);
+
+// 배열 .splice()
+numbers.splice(2, 1); // 인덱스 2부터 1개의 원소를 지운다
+console.log(numbers);
